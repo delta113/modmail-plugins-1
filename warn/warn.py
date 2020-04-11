@@ -86,7 +86,7 @@ class WarnPlugin(commands.Cog):
             {"_id": "warns"}, {"$set": {str(member.id): userw}}, upsert=True
         )
 
-        await ctx.send(f"Successfully warned **{member}**\n`{reason}`")
+        await ctx.send(f"Successfully removed order  **{member}**\n`{reason}`")
 
         await channel.send(
             embed=await self.generateWarnEmbed(
@@ -146,7 +146,7 @@ class WarnPlugin(commands.Cog):
             name="Moderator", value=f"<@{ctx.author.id}> - `{ctx.author}`",
         )
         embed.add_field(name="Reason", value=reason)
-        embed.add_field(name="Total Warnings", value="0")
+        embed.add_field(name="order removeals", value="0")
 
         return await channel.send(embed=embed)
 
@@ -162,7 +162,7 @@ class WarnPlugin(commands.Cog):
         embed.add_field(name="User", value=f"{member}")
         embed.add_field(name="Moderator", value=f"<@{modid}>` - ({mod})`")
         embed.add_field(name="Reason", value=reason)
-        embed.add_field(name="Total Warnings", value=warning)
+        embed.add_field(name="order removeals", value=warning)
         return embed
 
 
